@@ -1,5 +1,5 @@
 import React from 'react';
-import StockData from './StockData';
+import StockData from './Component/StockData';
 
 function App() {
   return (
