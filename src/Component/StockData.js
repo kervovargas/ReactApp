@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import StockDataRenderer from './StockDataRenderer';
 
 
  
@@ -18,6 +19,15 @@ const StockData = () => {
       const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${apiKey}`;
       const response = await axios.get(url);
       setStockData(response.data['Global Quote']);
+      console.log(response.data)
+
+      // Destructuring
+      /*
+      var person = {first: "Ulysses", last: "Ludwig", phone: "408.621.7659"}
+      const { phone } = person;
+      console.log(phone);
+      */
+
     } catch (error) {
       console.error('Error fetching stock data:', error);
     }
@@ -37,6 +47,8 @@ const StockData = () => {
         Fetch Stock Data
       </Button>
       {stockData && (
+        <StockDataRenderer stockData={stockData} />
+        /*
         <div className="stock-info">
           <Typography variant="h6">Symbol: {stockData['01. symbol']}</Typography>
           <Typography>Open: {stockData['02. open']}</Typography>
@@ -44,8 +56,9 @@ const StockData = () => {
           <Typography>Low: {stockData['04. low']}</Typography>
           <Typography>Price: {stockData['05. price']}</Typography>
           <Typography>Volume: {stockData['06. volume']}</Typography>
-          <Typography>Last Trading Day: {stockData['07. latest trading day']}</Typography>
+          <Typography>Last Trading Day: {  moment(stockData['07. latest trading day']).format("MMMM d, YYYY")  }</Typography>
         </div>
+        */
       )}
     </Paper>
   );
