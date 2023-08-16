@@ -1,0 +1,42 @@
+.stock-data-container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.fetch-button {
+  background-color: #1976d2;
+  color: white;
+  &:hover {
+    background-color: #1565c0;
+  }
+}
+
+.stock-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.main-title {
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3d5a80;
+}

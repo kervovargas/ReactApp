@@ -1,3 +1,4 @@
+import '../styles/StockData.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
@@ -5,6 +6,8 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
+
+ 
 const StockData = () => {
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockData, setStockData] = useState(null);
@@ -21,30 +24,29 @@ const StockData = () => {
   };
 
   return (
-    <Paper elevation={3} style={{ padding: '20px' }}>
-      <Typography variant="h5">Stock Data App</Typography>
+    <Paper elevation={3} className="stock-data-container" style={{ backgroundColor: '#f4f4f4' }}>
+      <Typography variant="h5" className="app-title">Stock Data App</Typography>
       <TextField
         label="Enter stock symbol"
         value={stockSymbol}
         onChange={(e) => setStockSymbol(e.target.value)}
         variant="outlined"
-        style={{ marginBottom: '10px' }}
+        className="input-field"
       />
-      <Button variant="contained" onClick={fetchStockData}>
+      <Button variant="contained" className="fetch-button" onClick={fetchStockData}>
         Fetch Stock Data
       </Button>
       {stockData && (
-  <div style={{ marginTop: '20px' }}>
-    <Typography variant="h6">Symbol: {stockData['01. symbol']}</Typography>
-    <Typography>Open: {stockData['02. open']}</Typography>
-    <Typography>High: {stockData['03. high']}</Typography>
-    <Typography>Low: {stockData['04. low']}</Typography>
-    <Typography>Price: {stockData['05. price']}</Typography>
-    <Typography>Volume: {stockData['06. volume']}</Typography>
-    <Typography>Last Trading Day: {stockData['07. latest trading day']}</Typography>
-  </div>
-)}
-
+        <div className="stock-info">
+          <Typography variant="h6">Symbol: {stockData['01. symbol']}</Typography>
+          <Typography>Open: {stockData['02. open']}</Typography>
+          <Typography>High: {stockData['03. high']}</Typography>
+          <Typography>Low: {stockData['04. low']}</Typography>
+          <Typography>Price: {stockData['05. price']}</Typography>
+          <Typography>Volume: {stockData['06. volume']}</Typography>
+          <Typography>Last Trading Day: {stockData['07. latest trading day']}</Typography>
+        </div>
+      )}
     </Paper>
   );
 };
