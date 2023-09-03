@@ -14,7 +14,7 @@ const StockDataRenderer = ({ stockData }) => {
       <Typography>Low: {stockData['04. low']}</Typography>
       <Typography>Price: {stockData['05. price']}</Typography>
       <Typography>Volume: {stockData['06. volume']}</Typography>
-      <Typography>Last Trading Day: {  moment(stockData['07. latest trading day']).format("MMMM d, YYYY")  }</Typography>
+      <Typography>Last Trading Day: {moment(stockData['07. latest trading day']).format("MMMM d, YYYY")}</Typography>
     </div>
   );
 };

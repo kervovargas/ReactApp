@@ -1,4 +1,5 @@
 import '../styles/StockData.css';
+import StockDataTable from './StockDataTable'; 
 import React, { useState } from 'react';
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
@@ -47,18 +48,7 @@ const StockData = () => {
         Fetch Stock Data
       </Button>
       {stockData && (
-        <StockDataRenderer stockData={stockData} />
-        /*
-        <div className="stock-info">
-          <Typography variant="h6">Symbol: {stockData['01. symbol']}</Typography>
-          <Typography>Open: {stockData['02. open']}</Typography>
-          <Typography>High: {stockData['03. high']}</Typography>
-          <Typography>Low: {stockData['04. low']}</Typography>
-          <Typography>Price: {stockData['05. price']}</Typography>
-          <Typography>Volume: {stockData['06. volume']}</Typography>
-          <Typography>Last Trading Day: {  moment(stockData['07. latest trading day']).format("MMMM d, YYYY")  }</Typography>
-        </div>
-        */
+        <><StockDataTable stockData={setStockData} /><StockDataRenderer stockData={stockData} /></>
       )}
     </Paper>
   );
